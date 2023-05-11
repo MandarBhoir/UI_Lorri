@@ -253,7 +253,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>--html=report.html</h1>
-    <p>Report generated on 11-May-2023 at 13:53:16 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 11-May-2023 at 17:15:30 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -269,8 +269,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.5</td></tr></table>
     <h2>Summary</h2>
-    <p>7 tests ran in 112.55 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">5 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">2 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>12 tests ran in 162.43 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">10 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">2 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -284,26 +284,46 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
-          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByState</td>
-          <td class="col-duration">16.66</td>
+          <td class="col-name">test_SearchByCountry.py::TestOne::test_CheckSearchCountByCountry</td>
+          <td class="col-duration">12.24</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;tests.test_SearchByCountry.TestOne object at 0x000001E89139F1F0&gt;<br/><br/>    def test_SearchByState(self):<br/>        self.driver.find_element(By.ID, &quot;custom-input-suggest-id&quot;).send_keys(&quot;maharashtra&quot;)<br/>        search_results = self.driver.find_elements(By.XPATH, &quot;//div[@id=&#x27;react-autowhatever-1&#x27;]//ul[1]//li&quot;)<br/>        time.sleep(2)<br/>        for results2 in search_results:<br/>&gt;           assert &quot;Khed, Pune, Maharashtra&quot; == results2.text<br/><span class="error">E           AssertionError: assert &#x27;Khed, Pune, Maharashtra&#x27; == &#x27;Vada, Thane, Maharashtra&#x27;</span><br/><span class="error">E             - Vada, Thane, Maharashtra</span><br/><span class="error">E             ? ^^ -  ^^^</span><br/><span class="error">E             + Khed, Pune, Maharashtra</span><br/><span class="error">E             ? ^^^   ^^</span><br/><br/>test_SearchByCountry.py:23: AssertionError<br/></div></td></tr></tbody>
+            <div class="log">self = &lt;tests.test_SearchByCountry.TestOne object at 0x000001959A2C4C40&gt;<br/><br/>    def test_CheckSearchCountByCountry(self):<br/>        self.driver.find_element(By.ID, &quot;custom-input-suggest-id&quot;).send_keys(&quot;india&quot;)<br/>        search_results = self.driver.find_elements(By.XPATH, &quot;//div[@id=&#x27;react-autowhatever-1&#x27;]//ul[1]//li&quot;)<br/>&gt;       assert len(search_results) == 30<br/><span class="error">E       assert 21 == 30</span><br/><span class="error">E        +  where 21 = len([&lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;0fa16274b17b73d0c7d992691e267d2d&quot;, element=&quot;6631368A3C4CB0...t.WebElement (session=&quot;0fa16274b17b73d0c7d992691e267d2d&quot;, element=&quot;6631368A3C4CB00B1DF7E17F4E954105_element_30&quot;)&gt;, ...])</span><br/><br/>test_SearchByCountry.py:21: AssertionError<br/></div></td></tr></tbody>
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
-          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByinvalid</td>
-          <td class="col-duration">16.88</td>
+          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByMoreKeyword</td>
+          <td class="col-duration">13.16</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;tests.test_SearchByCountry.TestOne object at 0x000001E89139E860&gt;<br/><br/>    def test_SearchByinvalid(self):<br/>        self.driver.find_element(By.ID, &quot;custom-input-suggest-id&quot;).send_keys(&quot;Thane, Thane, Maharashtra&quot;)<br/>        search_results = self.driver.find_elements(By.XPATH, &quot;//div[@id=&#x27;react-autowhatever-1&#x27;]//ul[1]//li&quot;)<br/>        time.sleep(2)<br/>        for results in search_results:<br/>&gt;           assert &quot;lokmanya nagar&quot; == results.text<br/><span class="error">E           AssertionError: assert &#x27;lokmanya nagar&#x27; == &#x27;Thane, Thane, Maharashtra&#x27;</span><br/><span class="error">E             - Thane, Thane, Maharashtra</span><br/><span class="error">E             + lokmanya nagar</span><br/><br/>test_SearchByCountry.py:62: AssertionError<br/></div></td></tr></tbody>
+            <div class="log">self = &lt;tests.test_SearchByCountry.TestOne object at 0x000001959A2C7DC0&gt;<br/><br/>    def test_SearchByMoreKeyword(self):<br/>        self.driver.find_element(By.ID, &quot;custom-input-suggest-id&quot;).send_keys(&quot;Ulhas&quot;)<br/>        search_results = self.driver.find_elements(By.XPATH, &quot;//div[@id=&#x27;react-autowhatever-1&#x27;]//ul[1]//li&quot;)<br/>        time.sleep(2)<br/>        for result in search_results:<br/>&gt;           assert result.text in &quot;Ulhas&quot;<br/><span class="error">E           assert &#x27;Ulhasnagar, Thane, Maharashtra&#x27; in &#x27;Ulhas&#x27;</span><br/><span class="error">E            +  where &#x27;Ulhasnagar, Thane, Maharashtra&#x27; = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;289d021861ba3e4610ff3c6b2173300d&quot;, element=&quot;D817BFDEADB1E009820BDF236D0227AB_element_25&quot;)&gt;.text</span><br/><br/>test_SearchByCountry.py:64: AssertionError<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByCountry</td>
-          <td class="col-duration">18.15</td>
+          <td class="col-duration">11.11</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByState</td>
+          <td class="col-duration">12.30</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Test Fail
+Test Pass
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_SearchByCountry.py::TestOne::test_CheckSearchCountByState</td>
+          <td class="col-duration">12.13</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -312,7 +332,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByCity</td>
-          <td class="col-duration">13.21</td>
+          <td class="col-duration">13.15</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -320,18 +340,27 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchBylesskeyword</td>
-          <td class="col-duration">14.09</td>
+          <td class="col-name">test_SearchByCountry.py::TestOne::test_CheckSearchCountByCity</td>
+          <td class="col-duration">12.32</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Test fail
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByLessKeyword</td>
+          <td class="col-duration">15.81</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Test pass
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchBymorekeyword</td>
-          <td class="col-duration">15.71</td>
+          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByExactMatch</td>
+          <td class="col-duration">13.11</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -339,9 +368,29 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByExactMatch</td>
-          <td class="col-duration">17.29</td>
+          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByInvalid</td>
+          <td class="col-duration">14.48</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchByNumber</td>
+          <td class="col-duration">14.60</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Test pass
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_SearchByCountry.py::TestOne::test_SearchBySC</td>
+          <td class="col-duration">15.57</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Test pass
+<br/></div></td></tr></tbody></table></body></html>
